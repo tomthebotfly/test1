@@ -2,8 +2,25 @@
 
 <html>
 <head>
-  <title>Html with atom</title>
-  <link rel = "stylesheet" type = "text/css" href = "css.css" />
+    <title>Html with atom</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <br>
+    <script>
+                $(document).ready(function(){
+                    $('#mute_all').on('click', function () {
+                        $('body video, body audio').each(function () {
+                            $(this).prop('muted', true);
+                        });
+                    });
+
+               $('#unmute_all').on('click',function(){
+                    $('body video, body audio').each(function () {
+                        $(this).prop('muted', false);
+                    });
+               });
+                });
+    </script>
 </head>
 <body>
 
@@ -29,12 +46,19 @@
       <img src="https://tr.rbxcdn.com/9dfff687df94d00ddc268ef14bcbc2e9/420/420/Decal/Png" alt="S M U G">
       <div class="tenor-gif-embed" data-postid="13316513" data-share-method="host" data-width="100%" data-aspect-ratio="1.7785714285714287"><a href="https://tenor.com/view/smug-dancing-dance-gif-13316513">Smug Dancing GIF</a> from <a href="https://tenor.com/search/smug-gifs">Smug GIFs</a></div>
       <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+      <button id="mute_all">Mute all sounds</button> |
+      <button id="unmute_all">Unmute all sounds</button> <br />
       <button onclick="alert('you now pressed the button!')">hey look it's a button</button>
       <button onclick="document.getElementById('music').play()">Play some chill music</button>
       <p> Hey👋 ladies💁‍♀️ 📷 Would 😍 you 👈 like 👍 to 2️⃣ get 😮 rich 💰💰💰 by running 🏃‍♀️🏃‍♀️ your 👈 own business 👩‍💼💼 from home 🏡 with just ☝ your phone? 📱🤳 Well 🤷‍♀️ you can't. 😂 Get 👏 a 👏 real 👏 job 👏 you 👏 stupid 👏 idiot </p>
       <video width="854" height="480" controls>
           <source src="hat.mp4" type="video/mp4">
       </video>
+      <audio controls>
+          <source src="https://vgmdownloads.com/soundtracks/a-hat-in-time-ost/nykqlktqem/66%20Scootin%27%20Through%20Clocktowers%20Beneath%20The%20Sea.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+      </audio>
+
   </div>
 </body>
 </html>
